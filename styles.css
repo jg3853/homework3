@@ -1,0 +1,101 @@
+/* Step 1: Page Layout using Grid */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Step 2: Position the sidebar navigation elements using Flexbox */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+/* Step 3: Decorate Summary, Education, and Experience Sections */
+.content h2, .content h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Step 4: Decorate Skills Section */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills ul {
+    flex: 1 1 300px;
+}
+
+/* Step 5: Add Grid layout to your Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project img {
+    max-width: 100%;
+}
+
+/* Step 6: Positioning Contact Information */
+.footer {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Step 7: Style the Download Resume Button */
+.sidebar a {
+    position: absolute;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #0056b3;
+}
